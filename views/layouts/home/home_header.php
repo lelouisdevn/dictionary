@@ -1,6 +1,6 @@
 <div class="row header">
     <div class="col-3" id="trademark" style="font-size: 30px; font-family: monospace; cursor: pointer;">
-        Atlanteans
+        <a style="color: black;text-decoration: none;" href="/">Atlanteans</a>
     </div>
     <div class="col-9">
         <div class="row">

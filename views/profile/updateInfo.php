@@ -19,5 +19,4 @@
 <link rel="stylesheet" href="/css/content.css">
 <link rel="stylesheet" href="/css/home.css">
 
-<script src="/js/search.js"></script>
 <?php $this->stop(); ?>

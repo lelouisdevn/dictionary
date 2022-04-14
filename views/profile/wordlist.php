@@ -47,5 +47,4 @@
     $('.album:even').addClass('alert alert-info');
 </script>
 
-<script src="/js/search.js"></script>
 <?php $this->stop(); ?>

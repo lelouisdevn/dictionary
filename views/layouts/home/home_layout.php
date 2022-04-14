@@ -160,33 +160,4 @@
 
 
 <?=$this->section("page_specific_js")?>
-<script>
-  // var inputField = $('#search');
-  // inputField.on('keydown', function(e){
-  //   if (e.which == 13){
-  //     var url = "/search?keyword=" + inputField.val();
-  //     // window.open(url, '_blank').focus();
-  //     window.location.href= url;
-  //     inputField.val('');
-  //   }
-  // })
-
-  $('#trademark').on('click', function(){
-    window.location.href = '/';
-  })
-
-  // $('#login').on('click', function(){
-  //   var email = $('#email').val();
-  //   var pwd = $('#pass').val();
-
-  //   $.ajax({
-  //     method: 'POST',
-  //     route: '/user/login',
-  //     data: {email:email, passwd:pwd},
-  //     success:function(data){
-  //       alert("hello")
-  //     }
-  //   })
-  // })
-</script>
 </html>
