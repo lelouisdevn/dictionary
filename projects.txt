@@ -1,3 +1,0 @@
-2 bang du lieu + 1 API
-
-api.dictionaryapi.dev/api/v2/entries/en/dictionary

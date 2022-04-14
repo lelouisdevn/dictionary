@@ -37,7 +37,6 @@
 
               
               <div class="">
-                <!-- <div>EXPLORE THE BEST DICTIONARY ON EARTH!</div> -->
                 <div style="display: inline-block;">
                   <div><i style="font-size: 100px;" class="fa fa-user" data-toggle="modal" data-target="#myModal"></i></div>
                   <div>Sign in</div>
@@ -49,8 +48,15 @@
                 </div>
               </div>
               <!-- End section -->
+              <?php }else { ?>
+                <div style="margin: 20px; font-size: 25px;">Sign out your account</div>
+                <div class="">
+                  <div style="display: inline-block;">
+                    <div><i style="font-size: 100px;" class="fa fa-sign-out"></i></div>
+                    <div><a style="color: black;" href="/user/logout">Sign out</a></div>
+                  </div>
+                </div>
               <?php } ?>
-
             </div>
         </div>
 
@@ -60,15 +66,13 @@
               <div>Word of the day</div>
             </div>
             <div class="word">
-              <div>Sucker</div>
+              <div><a href="" id="todayword"></a></div>
             </div>
           </div>
           <div class="col-6">
             <div class="word_content">
-              <div style="padding: 0 10px;">
-                Something to explain the word here...
-              Something to explain the word here...
-              Something to explain the word here...
+              <div style="padding: 0 10px;" id="todaywcontent">
+              
               </div>
             </div>
           </div>
@@ -77,4 +81,30 @@
 <link rel="stylesheet" href="/css/profile.css">
 <link rel="stylesheet" href="/css/content.css">
 <link rel="stylesheet" href="/css/home.css">
+
+<script>
+  // var inputField = $('#search');
+  // inputField.on('keydown', function(e){
+  //   if (e.which == 13){
+  //     var url = "/search1?keyword=" + inputField.val();
+  //     // window.open(url, '_blank').focus();
+  //     window.location.href= url;
+  //     inputField.val('');
+  //   }
+  // })
+
+  // word of the day
+  // tạo một mảng gồm các từ
+  var word = Array("Metal", "Plant", "Water", "Fire", "Soil");
+  // lấy ngẫu nhiên một từ nào đó; sử dụng API để tra cứu định nghĩa của từ vừa được chọn
+  var item = word[Math.floor(Math.random()*word.length)];
+  $.getJSON(`https://api.dictionaryapi.dev/api/v2/entries/en/${item}`, function(data){
+    var definition = data[0].meanings[0].definitions[0].definition;
+    // console.log(definition);
+    $('#todayword').html(item).css("color", 'black');
+    $('#todayword').prop('href', '/search?keyword=' + item);
+    $('#todaywcontent').html(definition);
+  });
+</script>
+
 <?php $this->stop() ?>

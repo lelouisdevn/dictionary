@@ -15,9 +15,9 @@ $router = new \Bramus\Router\Router();
 // Auth routes
 $router->get('/user/logout', '\App\Controllers\Auth\LoginController@logout');
 $router->post('/user/login', '\App\Controllers\Auth\LoginController@login');
-$router->post('user/signup', '\App\Controllers\Auth\RegisterController@signUp');
+$router->post('/user/signup', '\App\Controllers\Auth\RegisterController@signUp');
 
-//Profile 
+//Profile
 $router->get('/profile', '\App\Controllers\ProfileController@showProfile');
 $router->post('/profile/picture/update', 'App\Controllers\ProfileController@updateProfilePicture');
 $router->get('/user/info/update', '\App\Controllers\ProfileController@showInfo');
@@ -29,7 +29,9 @@ $router->get('/user/wordlist', '\App\Controllers\ProfileController@showWordlist'
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');
 
+// search
 $router->get('/search', '\App\Controllers\HomeController@search');
+$router->post('/user/add/wordlist', '\App\Controllers\ProfileController@addToWordlist');;
 
 $router->set404('\App\Controllers\Controller@sendNotFound');
 

@@ -108,7 +108,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              <form class="" action="user/signup" method="post">
+              <form class="" action="/user/signup" method="post">
 
                 <div class="form-group">
                   <label for="">Username :</label>
@@ -164,8 +164,9 @@
   // var inputField = $('#search');
   // inputField.on('keydown', function(e){
   //   if (e.which == 13){
-  //     var url = "/home1.php?word=" + inputField.val();
-  //     window.open(url, '_blank').focus();
+  //     var url = "/search?keyword=" + inputField.val();
+  //     // window.open(url, '_blank').focus();
+  //     window.location.href= url;
   //     inputField.val('');
   //   }
   // })

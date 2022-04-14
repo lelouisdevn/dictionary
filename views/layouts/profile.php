@@ -1,16 +1,25 @@
 <?php $this->layout("layouts/default/default", ["title" => APPNAME]) ?>
 
 <?php $this->start("page"); ?>
+<?php 
+  use Illuminate\Database\Capsule\Manager as DB;
 
+  $dt = DB::table('user')->where('UserID', $_SESSION['user'])->first();
+  // echo $dt->UserID;
+?>
 <div class="row content profile">
+          <?php if ($dt) { ?>
           <div class="col-3">
-            <div><img class="avt" src="<?php if (isset($_SESSION['UserPicture'])) { echo "/" . $_SESSION['UserPicture']; } ?>" alt=""></div>
+            <!-- user profile picture -->
+            <div><img class="avt" src="/image/<?=$dt->UserPicture?>" alt=""></div>
           </div>
+          <?php } ?>
+          <?php if ($dt) { ?>
           <div class="col-9">
             <div class="profile-info">
-              <div><?php if (isset($_SESSION['UserName'])) { echo $_SESSION['UserName']; } ?></div>
-              <div><?php if (isset($_SESSION['user'])) { echo "User ID: " . $_SESSION['user']; } ?></div>
-              <div><?php if (isset($_SESSION['Join'])) { echo "Join at: " . $_SESSION['Join']; } ?></div>
+              <div><?=$dt->UserName?></div>
+              <div><?="User ID: " . $dt->UserID?></div>
+              <div><?="Join at: " . $dt->created_at?></div>
               <div><a id="fdialogue" class="btn btn-dark">Upload new user profile picture</a></div>
               <!-- form upload new user profile picture -->
               <form id="avt_upload_form" action="/profile/picture/update" method="POST" enctype="multipart/form-data">
@@ -19,6 +28,7 @@
               <!-- end form -->
             </div>
           </div>
+          <?php } ?>
           <div class="col-3 sidebar">
             <div>
               <div><a href="/user/wordlist">Wordlist</a></div>
@@ -33,13 +43,18 @@
         </div>
 
 <script>
+  // Click vào button "update...." để mở hộp thoại chọn file.
   $('#fdialogue').on('click', function(){
     $('#file').trigger('click');
   })
-
+  // Khi chọn 1 file nào đó (trường input thay đổi) => submit form có ID là file.
   $("#file").change(function(){
     $('#avt_upload_form').submit();
   })
 </script>
+
+<script src="/js/content.js"></script>
+<script src="/js/search.js"></script>
+
 
 <?php $this->stop() ?>

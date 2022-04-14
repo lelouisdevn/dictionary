@@ -5,16 +5,13 @@
   var mword_example = document.getElementsByClassName('mword_example');
 
 
-  $('#search-ajax').on('keyup', function(e){
+  $('#search-ajax').on('keydown', function(e){
     if (e.which == 13){
       console.log($('#search-ajax').val());
       var word = $('#search-ajax').val();
 
-      
-      
       console.log(ipa);
-    //   $(".mword").html("No definitions found!");
-      
+      $('#mword').html("Searching....");
       $('#mword_meaning').empty();
 
       for (let i = 0; i<ipa.length; i++){
@@ -25,9 +22,25 @@
     }
   })
 
+  function UrlExists(url) {
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    if (http.status != 404){
+      return 0;
+    }
+    else {
+      return 1;
+    }
+  }
+
   function search(word){
-    $.getJSON(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`, function(data){
-        if (data[0].hasOwnProperty('word')){
+    url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
+    console.log(url);
+    var status = UrlExists(url);
+    if (status == 0 ) {
+      $.getJSON(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`, function(data){
+        if (status == 0){
             for (let i = 0; i < data.length; i++){
                 $('#mword').html(data[i].word);
                 for (let j = 0; j < data[i].phonetics.length; j++){
@@ -37,8 +50,6 @@
                   }else {
                     $(ipa[j]).html('');
                   }
-                  
-                  // $('.usipa').html(data[i].phonetics[j].text);
                 }
       
                 for (let k = 0; k < data[i].meanings[0].definitions.length; k++){
@@ -57,10 +68,11 @@
                   $(mwdef[k]).html(data[i].meanings[0].definitions[k].definition);
                 }
             }
-        }else{
-            $('.mword').html("No definition");
-        }
-    });
+          }
+      });
+    }else {
+      $('#mword').html("No definitions");
+    }
   }
 
   var volume = document.getElementsByClassName('fa-volume-up');
@@ -83,11 +95,24 @@
     var query = String(window.location.search);
     var word = parseInt(query.indexOf("="));
     var sub = query.substring(word + 1);
-    console.log(sub);
-
+    
     search(sub);
   }
 
   $('#like').on('click', function(){
       console.log($('#mword').text());
+      var word = $('#mword').text();
+      $.ajax({
+        url: '/user/add/wordlist',
+        type: 'post',
+        data: { word:word },
+        success:function(data){
+          $('#mword').html(data);
+          if ($('#like').hasClass('fa-heart-o')){ 
+            $('#like').removeClass('fa-heart-o').addClass('fa-heart')
+          }else {
+            $('#like').removeClass('fa-heart').addClass('fa-heart-o');
+          }
+        }
+      })
   })

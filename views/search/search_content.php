@@ -11,7 +11,7 @@
             </div>
             <!-- The word searched -->
             <div class="col-md-12">
-              <div class="mword"><span id="mword">Hello</span> <span>Noun</span> <span id="like" class="fa fa-heart-o"></span>
+              <div class="mword"><span id="mword">Searching....</span> <span>Noun</span> <span id="like" class="fa fa-heart-o"></span>
               </div>
             </div>
 
@@ -41,20 +41,9 @@
 
             <!-- foreach to fetch all data -->
             <div class="col-12-md mword_meaning">
-
               <div  id="mword_meaning">
 
               </div>
-              <!-- <div class="mword_def">
-                Definition here.
-              </div> -->
-
-              <!-- foreach all example -->
-              <!-- <div style="padding: 0 20px;">
-                <div class="mword_example">
-                  <i class="fa fa-circle"></i> Example here.
-                </div>
-              </div> -->
             </div>
           </div>
         </div>

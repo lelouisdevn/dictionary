@@ -18,9 +18,9 @@
 
 <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./CSS/home.css">
-    <link rel="stylesheet" href="./css/content.css">
-    <script src="./js/content.js"></script>
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <script src="/js/content.js"></script>
     <link rel="stylesheet" href="./css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/css/animate.css" rel="stylesheet">
@@ -28,14 +28,15 @@
 <body>
     <?php include('captcha.php') ?>
     <div class="container" >
+        <!-- header -->
         <?php include('default_header.php'); ?>
         <!-- end header -->
 
-
         <?=$this->section("page")?>
         
-
+        <!-- footer -->
         <?php include('default_footer.php'); ?>
+        <!-- end footer -->
     </div>
 
     <!-- login modal -->
@@ -101,7 +102,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              <form class="" action="user/signup" method="post">
+              <form class="" action="/user/signup" method="post">
 
                 <div class="form-group">
                   <label for="">Username :</label>
@@ -148,9 +149,4 @@
 </body>
 
 <script src="./JS/content.js"></script>
-<script>
-  $('#trademark1').on('click', function(){
-    window.location.href = '/';
-  })
-</script>
 </html>
