@@ -3,6 +3,7 @@
 <?php $this->start("page-child"); ?>
 
 <!-- content -->
+<!-- hiển thị từ, nút like, thời gian thêm vào ds -->
 <table style="width: 100%;">
     <tr class="album" style="font-size: 18px; font-weight: bold;">
         <td style="width: 70%;">Word</td>
@@ -43,7 +44,7 @@
 </style>
 
 <script>
-    // Hiển thị màu ở dòng có số thứ tự chẵn.
+    // Hiển thị màu (xám) ở dòng có số thứ tự chẵn.
     $('.album:even').addClass('alert alert-info');
 </script>
 

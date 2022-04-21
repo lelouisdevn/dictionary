@@ -4,7 +4,7 @@
   var mwdef = document.getElementsByClassName('mword_def');
   var mword_example = document.getElementsByClassName('mword_example');
 
-
+  // reset các giá trị.
   $('#search-ajax').on('keydown', function(e){
     if (e.which == 13){
       console.log($('#search-ajax').val());
@@ -22,6 +22,8 @@
     }
   })
 
+  // kiểm tra xem từ cần tìm có tồn tại không
+  // nếu từ không tồn tại, api trả về lỗi 404.
   function UrlExists(url) {
     var http = new XMLHttpRequest();
     http.open('HEAD', url, false);
@@ -34,10 +36,12 @@
     }
   }
 
+  // tra từ.
   function search(word){
     url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
     console.log(url);
     var status = UrlExists(url);
+    // nếu không có lỗi: 
     if (status == 0 ) {
       $.getJSON(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`, function(data){
         if (status == 0){
@@ -68,13 +72,38 @@
                   $(mwdef[k]).html(data[i].meanings[0].definitions[k].definition);
                 }
             }
-          }
+
+            
+            // kiểm tra từ hiện tại có được người dùng like chưa
+            // nếu có hiện đã like
+            $.ajax({
+              url: '/user/word/isLiked',
+              type: 'post',
+              data: { word:word },
+              success:function(data){
+                // $('#mword').html(data);
+      
+                if (data){
+                  $('#like').removeClass('fa-heart-o').addClass('fa-heart')
+                }else {
+                  $('#like').removeClass('fa-heart').addClass('fa-heart-o');
+                }
+                // if ($('#like').hasClass('fa-heart-o')){ 
+                //   $('#like').removeClass('fa-heart-o').addClass('fa-heart')
+                // }else {
+                //   $('#like').removeClass('fa-heart').addClass('fa-heart-o');
+                // }
+              }
+            })
+        }
       });
+    // nếu không tìm được từ -> hiển thị lỗi
     }else {
       $('#mword').html("No definitions");
     }
   }
 
+  // phát audio phát âm.
   var volume = document.getElementsByClassName('fa-volume-up');
   var audio = document.getElementsByClassName('audio1');
   for (let i = 0; i< ipa.length; i++){
@@ -91,6 +120,7 @@
     })
   }
 
+  // khi reload trang, tra từ có trong url.
   window.onload = function(){
     var query = String(window.location.search);
     var word = parseInt(query.indexOf("="));
@@ -99,6 +129,8 @@
     search(sub);
   }
 
+
+  // thêm từ vào wordlist
   $('#like').on('click', function(){
       console.log($('#mword').text());
       var word = $('#mword').text();
@@ -107,7 +139,8 @@
         type: 'post',
         data: { word:word },
         success:function(data){
-          $('#mword').html(data);
+          // $('#mword').html(data);
+
           if ($('#like').hasClass('fa-heart-o')){ 
             $('#like').removeClass('fa-heart-o').addClass('fa-heart')
           }else {

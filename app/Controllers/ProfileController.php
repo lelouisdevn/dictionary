@@ -71,24 +71,4 @@ Class ProfileController extends Controller {
 
         redirect('/profile');
     }
-
-    public function addToWordlist(){
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $data['word'] = $_POST['word'];
-            $word = $data['word'];
-
-            // bookmarkid = last + 1;
-            $bookmark = new Bookmark;
-            $BookmarkID = $bookmark->getLastBmID() + 1;
-            // echo $BookmarkID;
-
-            // thêm một bookmark với userid, bookmarkid và từ được tìm kiếm.
-            Bookmark::create([
-                'UserID' => $_SESSION['user'],
-                'BookmarkID' => $BookmarkID,
-                'Word' => $word
-            ]);
-        }
-        // }
-    }
 }

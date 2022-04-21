@@ -83,16 +83,6 @@
 <link rel="stylesheet" href="/css/home.css">
 
 <script>
-  // var inputField = $('#search');
-  // inputField.on('keydown', function(e){
-  //   if (e.which == 13){
-  //     var url = "/search1?keyword=" + inputField.val();
-  //     // window.open(url, '_blank').focus();
-  //     window.location.href= url;
-  //     inputField.val('');
-  //   }
-  // })
-
   // word of the day
   // tạo một mảng gồm các từ
   var word = Array("Metal", "Plant", "Water", "Fire", "Soil");

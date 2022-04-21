@@ -31,10 +31,26 @@
           <?php } ?>
           <div class="col-3 sidebar">
             <div>
-              <div><a href="/user/wordlist">Wordlist</a></div>
-              <div><a href="/user/info/update">Update user information</a></div>
-              <div><a href="/user/account/delete">Delete account</a></div>
-              <div><a href="/user/logout">Log out</a></div>
+              <div>
+                <a href="/user/wordlist">Wordlist
+                  <!-- <span class="badge badge-light"><i class="fa fa-book"></i> </span> -->
+                </a>
+              </div>
+              <div>
+                <a href="/user/info/update">Update user information
+                  <!-- <span class="badge badge-light"><i class="fa fa-info"></i></span> -->
+                </a>
+              </div>
+              <div>
+                <a href="/user/account/delete">Delete account
+                  <!-- <span class="badge badge-light"><i class="fa fa-cog"></i></span> -->
+                </a>
+              </div>
+              <div>
+                <a href="/user/logout">Log out
+                  <!-- <span class="badge badge-light"><i class="fa fa-sign-out"></i></span> -->
+                </a>
+              </div>
             </div>
           </div>
           <div class="col-9">
