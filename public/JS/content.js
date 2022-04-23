@@ -46,7 +46,8 @@
       $.getJSON(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`, function(data){
         if (status == 0){
             for (let i = 0; i < data.length; i++){
-                $('#mword').html(data[i].word);
+                // $('#mword').html(data[i].word);
+                $('#mword').html(word);
                 for (let j = 0; j < data[i].phonetics.length; j++){
                   if (data[i].phonetics[j].text != ''){
                     $(ipa[j]).html(data[i].phonetics[j].text);

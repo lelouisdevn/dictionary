@@ -20,6 +20,8 @@
     //         // echo "<pre>no</pre>";
     //     }
     // }
-
-    $_SESSION['phrase'] =  $builder->getPhrase();
+  
+    // $_SESSION['phrase'] =  $builder->getPhrase();
     // echo $_SESSION['phrase'];
+    
+    

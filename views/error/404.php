@@ -5,7 +5,7 @@
         <div class="content-body">
             <div class="col-md-12">
                 <div class="mword">
-                    <span id="mword">Page not found</span>
+                    <span style="font-size: 50px;">Page not found</span>
                     <span style="color: red; font-size: 30px;">Error 404</span>
                 </div>
                 <div class="col-md-12">

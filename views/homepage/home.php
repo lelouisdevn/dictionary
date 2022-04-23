@@ -52,7 +52,7 @@
                 <div style="margin: 20px; font-size: 25px;">Sign out your account</div>
                 <div class="">
                   <div style="display: inline-block;">
-                    <div><i style="font-size: 100px;" class="fa fa-sign-out"></i></div>
+                    <div><a style="color: black;" href="/user/logout"><i style="font-size: 100px;" class="fa fa-sign-out"></i></a></div>
                     <div><a style="color: black;" href="/user/logout">Sign out</a></div>
                   </div>
                 </div>

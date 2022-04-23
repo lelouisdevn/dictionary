@@ -5,10 +5,11 @@ namespace App\Controllers\Auth;
 use App\Models\User;
 use App\Models\Account;
 use App\Controllers\Controller;
-// use Gregwar\Captcha\CaptchaBuilder;
+use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;
 use App\SessionGuard as Guard;
 use Illuminate\Database\Capsule\Manager as DB;
+
 
 class RegisterController extends Controller
 {	
@@ -35,15 +36,14 @@ class RegisterController extends Controller
 	}
 	public function checkCaptcha(){
 		$status = 0;
-		if ($_SERVER['REQUEST_METHOD']  == 'POST'){
-			if(PhraseBuilder::comparePhrases($_SESSION['phrase'], $_POST['captcha'])){
+			echo $_POST['captcha'];
+			if($_SESSION['phrase'] == $_POST['captcha']){
 				$status = 1;
 				unset($_SESSION['phrase']);
 			}else {
 				$status = 0;
 				unset($_SESSION['phrase']);
 			}
-		}
 		return $status;
 	}
 
@@ -64,15 +64,16 @@ class RegisterController extends Controller
 		$data['AccountID'] = $AccountID;
 
 		// Create a new user with data stored in $data.
-		// if ($this->checkCaptcha() == 1){
+		
+		if ($_POST['captcha'] == $_POST['captcha-str']){
 			$this->createUser($data);
 			if ($user->getLastUserID() == $UserID){
 				$_SESSION['user'] = $UserID;
-				redirect('/');
-			// }
-		// }else {
-			// echo "<script>alert('Wrong captcha')</script>";
-			// $this->sendPage('homepage/home');
+				redirect('/');	
+			}
+		}else {
+			echo "<script>alert('Wrong captcha')</script>";
+			$this->sendPage('homepage/home');
 		}
 
 		// $this->createUser($data);

@@ -28,9 +28,17 @@
 </head>
 <body>
 
-    
+<?php 
+
+  require '../vendor/autoload.php';
+
+  use Gregwar\Captcha\CaptchaBuilder;
+  $builder = new CaptchaBuilder();
+  $builder->build();
+
+?>
     <div class="container" >
-        <?php include('captcha.php') ?>
+        
         <?php include('home_header.php'); ?>
         <!-- <div class="row">
             div.
@@ -129,11 +137,13 @@
                   <input type="checkbox" name="" value="" class="form-check-input">
                   <label class="form-check-label">Ghi nhớ tôi</label>
                 </div> -->
+
                 <div class="form-group">
                   <label for="">Captcha:</label>
-                  <img src="<?php echo $builder->inline(); ?>" alt="Captcha">
+                  <img src="<?php echo $builder->inline();?>" alt="Captcha">
+                  <input style="display: hidden;" type="text" value="<?=$builder->getPhrase();?>" name="captcha-str" >
                   <input style="margin-top: 5px;" type="text" class="form-control" placeholder="Captcha:...." name="captcha">
-                </div>
+                </div> 
                 <div class="form-group">
                   <button type="submit" name="button" class="btn btn-primary btn-block">Sign up</button>
                 </div>

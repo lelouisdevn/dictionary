@@ -1,6 +1,10 @@
-.mword, #mword {
+.mword, #mword,  {
     font-size: 50px;
     font-weight: bold;
+}
+
+#mword1 {
+    font-size: 50px;
 }
 
 .mword span {
