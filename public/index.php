@@ -33,9 +33,11 @@ $router->post('/user/info/update', '\App\Controllers\ProfileController@updateInf
 
 // hiển thị form xóa tài khoản
 $router->get('/user/account/delete', '\App\Controllers\ProfileController@showDeleteAccountForm');
+$router->post('/user/account/delete', '\App\Controllers\ProfileController@deleteAccount' );
 
 // hiển thị wordlist của user;
 $router->get('/user/wordlist', '\App\Controllers\ProfileController@showWordlist');
+$router->post('/rmLike', '\App\Controllers\ProfileController@removeFromWordlist');
 
 // home
 $router->get('/', '\App\Controllers\HomeController@index');
@@ -50,7 +52,10 @@ $router->post('/user/add/wordlist', '\App\Controllers\Search@addToWordlist');
 // kiểm tra từ đã được like chưa để hiển thị icon like thích hơp.
 $router->post('/user/word/isLiked', '\App\COntrollers\Search@wordIsLiked');
 
+
+
 // 404 error page.
 $router->set404('\App\Controllers\Controller@sendNotFound');
+$router->post('/checkerror', '\App\Controllers\HomeController@checkerror');
 
 $router->run();

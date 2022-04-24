@@ -141,7 +141,11 @@
                 <div class="form-group">
                   <label for="">Captcha:</label>
                   <img src="<?php echo $builder->inline();?>" alt="Captcha">
-                  <input style="display: hidden;" type="text" value="<?=$builder->getPhrase();?>" name="captcha-str" >
+
+                  <!-- input ẩn lưu mã captcha -> được sử dụng để so với captcha người dùng nhập -->
+                  <input style="display: none;" type="text" value="<?=$builder->getPhrase();?>" name="captcha-str" >
+
+                  <!-- captcha người dùng nhập được lưu vào input field phía dưới. -->
                   <input style="margin-top: 5px;" type="text" class="form-control" placeholder="Captcha:...." name="captcha">
                 </div> 
                 <div class="form-group">
@@ -167,7 +171,6 @@
 
     
 </body>
-
 
 <?=$this->section("page_specific_js")?>
 </html>

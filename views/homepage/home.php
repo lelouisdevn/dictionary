@@ -95,6 +95,21 @@
     $('#todayword').prop('href', '/search?keyword=' + item);
     $('#todaywcontent').html(definition);
   });
+
+  // hiển thị lỗi (tk không tồn tại, sai mật khẩu/email)
+  window.onload = function(){
+    $.ajax({
+      type: 'POST',
+      // HomeController;
+      url: '/checkerror',
+      success:function(data){
+        if (data != ''){
+          alert(data);
+        }
+      }
+    });
+  }
+
 </script>
 
 <?php $this->stop() ?>

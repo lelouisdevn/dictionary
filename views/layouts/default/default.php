@@ -53,7 +53,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              <form class="" action="index.html" method="post">
+              <form class="" action="/user/login" method="post">
                 <div class="form-group">
                   <label for="">Email:</label>
                   <input type="text" name="" value="" class="form-control" placeholder="Enter email:...">

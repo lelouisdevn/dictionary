@@ -18,7 +18,8 @@
             <a href="/search?keyword=<?=$value->Word?>"><?=ucfirst($value->Word)?></a>
         </td>
         <td>
-            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart heart"></i>
+            <input type="text" name="BookmarkID" style="display: none;" value="<?=$value->BookmarkID?>">
         </td>
         <td><?php echo $value->created_at; ?></td>
     </tr>
@@ -46,6 +47,25 @@
 <script>
     // Hiển thị màu (xám) ở dòng có số thứ tự chẵn.
     $('.album:even').addClass('alert alert-info');
+
+    $('.heart').on('click', function(e){
+        // console.log(e.target.nextElementSibling);
+        var BookmarkID = e.target.nextElementSibling.value;
+        console.log(BookmarkID)
+
+        var album = e.target.parentElement.parentElement;
+        console.log(album);
+        $.ajax({
+            type: 'POST',
+            url: '/rmLike',
+            data: { BookmarkID:BookmarkID },
+            success:function(data){
+               $(album).remove();
+               $('.album').removeClass('alert alert-info');
+               $('.album:even').addClass('alert alert-info');
+            }
+        })
+    })
 </script>
 
 <?php $this->stop(); ?>
