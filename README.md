@@ -22,7 +22,6 @@ Các công nghệ và thư viện:
 5. Gregwar/captcha: https://packagist.org/packages/gregwar/captcha
 6. Illuminate Database: https://packagist.org/packages/illuminate/support
 7. Font-awesome: https://fontawesome.com/
-8. Intervention/image: https://packagist.org/packages/intervention/image
 
 3. Cơ sở dữ liệu:
 - Gồm 3 bảng:
