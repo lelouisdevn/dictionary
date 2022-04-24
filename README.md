@@ -23,6 +23,7 @@ Các công nghệ và thư viện:
 6. Illuminate Database: https://packagist.org/packages/illuminate/support
 7. Font-awesome: https://fontawesome.com/
 
+
 3. Cơ sở dữ liệu:
 - Gồm 3 bảng:
 + user: lưu trữ thông tin cơ bản của người dùng như tên, ảnh đại diện, ngày tham gia,..
