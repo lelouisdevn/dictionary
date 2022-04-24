@@ -23,6 +23,7 @@ Các công nghệ và thư viện:
 6. Illuminate Database: https://packagist.org/packages/illuminate/support
 7. Font-awesome: https://fontawesome.com/
 
+
 3. Cơ sở dữ liệu:
 - Gồm 3 bảng:
 + user: lưu trữ thông tin cơ bản của người dùng như tên, ảnh đại diện, ngày tham gia,..
@@ -34,6 +35,7 @@ Source: https://api.dictionaryapi.dev/api/v2/entries/en/dictionary
 
 - File dictionary.sql: tạo cơ sở dữ liệu mẫu gồm các bảng như mô tả và một số mẫu dữ liệu.
 Truy cập localhost/phpmyadmin, tạo cơ sở dữ liệu với tên "dictionary", import cơ sở dữ liệu.
+
 
 4. Hướng phát triển:
 - Phát triển thêm đa dạng loại từ (trạng từ, giới từ,...) do ứng dụng hiện chỉ hổ trợ tra cứu danh từ, do đó khi tra cứu một số từ thì chúng ta có thể gặp tình trạng "no definitions found".
