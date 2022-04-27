@@ -1,6 +1,8 @@
 <?php $this->layout("layouts/default/default", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
+
+    <!-- page 404 hiển thị khi một đường dẫn không tồn tại.  -->
     <div class="row content">
         <div class="content-body">
             <div class="col-md-12">

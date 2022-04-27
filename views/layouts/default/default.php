@@ -7,16 +7,16 @@
     <title>Dictionary</title>
 
     <!-- Bootstrap css & js -->
-     <!-- Latest compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- Popper JS -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
+    <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/CSS/home.css">
     <link rel="stylesheet" href="/css/content.css">
@@ -46,7 +46,6 @@
             <!-- Modal header -->
             <div class="modal-header text-center d-block">
               <button type="button" name="button" class="close" data-dismiss="modal" style="position: absolute; right: 10px;">&times;</button>
-              <!-- <h2 class="modal-title"> <i class="fa fa-lock"></i> Log in </h2> -->
               <h3 style="font-family: monospace;">Atlanteans</h3>
               <h5>Log in</h5>
             </div>
@@ -58,17 +57,10 @@
                   <label for="">Email:</label>
                   <input type="text" name="" value="" class="form-control" placeholder="Enter email:...">
                 </div>
-
                 <div class="form-group">
                   <label for="">Password:</label>
                   <input type="password" name="" value="" class="form-control" placeholder="Enter password:...">
                 </div>
-
-                <!-- <div class="form-group form-check">
-                  <input type="checkbox" name="" value="" class="form-check-input">
-                  <label class="form-check-label">Ghi nhớ tôi</label>
-                </div> -->
-
                 <div class="form-group">
                   <button type="submit" name="button" class="btn btn-primary btn-block">Log in</button>
                 </div>
@@ -95,7 +87,6 @@
             <!-- Modal header -->
             <div class="modal-header text-center d-block">
               <button type="button" name="button" class="close" data-dismiss="modal" style="position: absolute; right: 10px;">&times;</button>
-              <!-- <h2 class="modal-title"> <i class="fa fa-lock"></i> Log in </h2> -->
               <h3 style="font-family: monospace;">Atlanteans</h3>
               <h5>Sign up</h5>
             </div>
@@ -108,21 +99,14 @@
                   <label for="">Username :</label>
                   <input type="text" name="username" value="" class="form-control" placeholder="Enter username:...">
                 </div>
-
                 <div class="form-group">
                   <label for="">Email:</label>
                   <input type="text" name="email" value="" class="form-control" placeholder="Enter email:...">
                 </div>
-
                 <div class="form-group">
                   <label for="">Password:</label>
                   <input type="password" name="password" value="" class="form-control" placeholder="Enter password:...">
                 </div>
-
-                <!-- <div class="form-group form-check">
-                  <input type="checkbox" name="" value="" class="form-check-input">
-                  <label class="form-check-label">Ghi nhớ tôi</label>
-                </div> -->
                 <div class="form-group">
                   <label for="">Captcha:</label>
                   <img src="<?php echo $builder->inline(); ?>" alt="Captcha">

@@ -16,6 +16,7 @@ class HomeController extends Controller
 		$this->sendPage('search/search_content');
 	}
 
+	// kiểm tra lỗi khi người dùng đăng nhập.
 	public function checkerror(){
 		if (isset($_SESSION['error'])){
 			$error = $_SESSION['error'];

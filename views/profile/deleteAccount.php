@@ -2,6 +2,7 @@
 
 <?php $this->start("page-child"); ?>
 
+<!-- form xác thực xóa tài khoản -->
 <form action="/user/account/delete" method="post">
     <div class="form-group">
         <p class="alert alert-danger">You are going to delete your account! This action cannot be undone!</p>
@@ -18,6 +19,7 @@
         <button class="btn btn-danger">Delete account</button>
     </div>
 </form>
+<!-- end form -->
 
 <link rel="stylesheet" href="/css/profile.css">
 <link rel="stylesheet" href="/css/content.css">

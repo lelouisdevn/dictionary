@@ -48,6 +48,8 @@
     // Hiển thị màu (xám) ở dòng có số thứ tự chẵn.
     $('.album:even').addClass('alert alert-info');
 
+    // loại bỏ các từ đã like trong wordlist
+    // khi thành viên click vào nút like.
     $('.heart').on('click', function(e){
         // console.log(e.target.nextElementSibling);
         var BookmarkID = e.target.nextElementSibling.value;
@@ -60,6 +62,7 @@
             url: '/rmLike',
             data: { BookmarkID:BookmarkID },
             success:function(data){
+                // đặt lại màu cho các dòng.
                $(album).remove();
                $('.album').removeClass('alert alert-info');
                $('.album:even').addClass('alert alert-info');

@@ -19,6 +19,7 @@
 </div>
 
 <script>
+    // click vào logout -> javascript redirect đến URL /user/logout.
     $('#logout').on('click', function(){
         window.location.href = "/user/logout";
     })

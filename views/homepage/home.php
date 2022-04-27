@@ -96,7 +96,7 @@
     $('#todaywcontent').html(definition);
   });
 
-  // hiển thị lỗi (tk không tồn tại, sai mật khẩu/email)
+  // hiển thị lỗi (tk không tồn tại, sai mật khẩu/email) bằng alert (JS).
   window.onload = function(){
     $.ajax({
       type: 'POST',

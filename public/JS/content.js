@@ -82,18 +82,11 @@
               type: 'post',
               data: { word:word },
               success:function(data){
-                // $('#mword').html(data);
-      
                 if (data){
                   $('#like').removeClass('fa-heart-o').addClass('fa-heart')
                 }else {
                   $('#like').removeClass('fa-heart').addClass('fa-heart-o');
                 }
-                // if ($('#like').hasClass('fa-heart-o')){ 
-                //   $('#like').removeClass('fa-heart-o').addClass('fa-heart')
-                // }else {
-                //   $('#like').removeClass('fa-heart').addClass('fa-heart-o');
-                // }
               }
             })
         }

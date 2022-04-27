@@ -40,9 +40,7 @@
     <div class="container" >
         
         <?php include('home_header.php'); ?>
-        <!-- <div class="row">
-            div.
-        </div> -->
+        
         <?=$this->section("page")?>
 
         <?php include('home_footer.php'); ?>
@@ -76,12 +74,6 @@
                   <label for="">Password:</label>
                   <input id="pass" type="password" name="pwd" value="" class="form-control" placeholder="Enter password:...">
                 </div>
-
-                <!-- <div class="form-group form-check">
-                  <input type="checkbox" name="" value="" class="form-check-input">
-                  <label class="form-check-label">Ghi nhớ tôi</label>
-                </div> -->
-
                 <div class="form-group">
                   <button type="submit" id="login" name="button" class="btn btn-primary btn-block">Log in</button>
                 </div>
@@ -109,7 +101,6 @@
             <!-- Modal header -->
             <div class="modal-header text-center d-block">
               <button type="button" name="button" class="close" data-dismiss="modal" style="position: absolute; right: 10px;">&times;</button>
-              <!-- <h2 class="modal-title"> <i class="fa fa-lock"></i> Log in </h2> -->
               <h3 style="font-family: monospace;">Atlanteans</h3>
               <h5>Sign up</h5>
             </div>
@@ -132,11 +123,6 @@
                   <label for="">Password:</label>
                   <input type="password" name="password" value="" class="form-control" placeholder="Enter password:...">
                 </div>
-
-                <!-- <div class="form-group form-check">
-                  <input type="checkbox" name="" value="" class="form-check-input">
-                  <label class="form-check-label">Ghi nhớ tôi</label>
-                </div> -->
 
                 <div class="form-group">
                   <label for="">Captcha:</label>

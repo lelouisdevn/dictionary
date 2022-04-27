@@ -1,3 +1,4 @@
+<!-- footer của các layouts -->
 <div class="row footer">
             <div class="col-3">Atlanteans&trade;</div>
             <div class="col-9">

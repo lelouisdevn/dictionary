@@ -2,6 +2,7 @@
 
 <?php $this->start("page-child"); ?>
 
+<!-- form cập nhật username -->
 <form action="/user/info/update" method="post">
 <div class="form-group">
         <p class="alert alert-info">You can make change to your username!</p>

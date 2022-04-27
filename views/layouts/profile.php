@@ -59,7 +59,7 @@
         </div>
 
 <script>
-  // Click vào button "update...." để mở hộp thoại chọn file.
+  // Click vào button "update profile picture" để mở hộp thoại chọn file.
   $('#fdialogue').on('click', function(){
     $('#file').trigger('click');
   })

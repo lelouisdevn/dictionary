@@ -44,11 +44,13 @@ Class ProfileController extends Controller {
         }
     }
 
+    // Hiển thị form xóa tài khoản
+    // 
     public function showDeleteAccountForm(){
-        // gửi form xác nhận xóa tài khoản: yêu cầu nhập email và mật khẩu.
         $this->sendPage('profile/deleteAccount');
     }
 
+    // xóa tài khoản.
     public function deleteAccount(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = $_POST['demail'];
