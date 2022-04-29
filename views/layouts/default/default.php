@@ -55,11 +55,11 @@
               <form class="" action="/user/login" method="post">
                 <div class="form-group">
                   <label for="">Email:</label>
-                  <input type="text" name="" value="" class="form-control" placeholder="Enter email:...">
+                  <input type="text" name="mail" value="" class="form-control" placeholder="Enter email:...">
                 </div>
                 <div class="form-group">
                   <label for="">Password:</label>
-                  <input type="password" name="" value="" class="form-control" placeholder="Enter password:...">
+                  <input type="password" name="pwd" value="" class="form-control" placeholder="Enter password:...">
                 </div>
                 <div class="form-group">
                   <button type="submit" name="button" class="btn btn-primary btn-block">Log in</button>
